@@ -13,6 +13,9 @@
     },
     "angular-goals": {
       "tags": []
+    },
+    "goal": {
+      "tags": ["goal"]
     }
   }
 }
