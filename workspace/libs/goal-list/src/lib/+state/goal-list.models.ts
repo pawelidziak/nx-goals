@@ -2,5 +2,10 @@
  * Interface for the 'GoalList' data
  */
 export interface GoalListEntity {
-  id: string | number; // Primary ID
+  slug: string;
+  title: string;
+  description: string;
+  body: string;
+  createdAt: string;
+  updatedAt: string;
 }

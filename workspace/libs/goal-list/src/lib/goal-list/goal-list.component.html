@@ -1,1 +1,7 @@
-<p>goal-list works!</p>
+<div [hidden]="!(isLoading$ | async)">
+	Loading articles...
+</div>
+
+<div [hidden]="(isLoading$ | async) || (goals$ | async).length > 0">
+	No goals are here... yet.
+</div>
