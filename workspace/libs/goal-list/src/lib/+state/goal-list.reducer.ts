@@ -10,6 +10,7 @@ export interface GoalListState extends EntityState<GoalListEntity> {
   selectedId?: string | number; // which GoalList record has been selected
   loaded: boolean; // has the GoalList list been loaded
   error?: string | null; // last none error (if any)
+  goals: GoalListEntity[];
 }
 
 export interface GoalListPartialState {
@@ -22,7 +23,8 @@ export const goalListAdapter: EntityAdapter<
 
 export const initialState: GoalListState = goalListAdapter.getInitialState({
   // set initial required properties
-  loaded: false
+  loaded: false,
+  goals: []
 });
 
 const goalListReducer = createReducer(

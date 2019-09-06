@@ -6,4 +6,5 @@
 	No goals are here... yet.
 </div>
 
-<app-goal-list-item></app-goal-list-item>
+<app-goal-list-item *ngFor="let goal of goals$ | async" [goal]="goal"
+></app-goal-list-item>

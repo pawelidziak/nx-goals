@@ -8,13 +8,14 @@ import { GoalListEffects } from './+state/goal-list.effects';
 import { GoalListFacade } from './+state/goal-list.facade';
 import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalListItemComponent } from './goal-list-item/goal-list-item.component';
+import { GoalListResolver } from './goal-list-resolver'
 
 @NgModule({
   imports: [
     CommonModule,
 
     RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: GoalListComponent }
+      { path: '', pathMatch: 'full', component: GoalListComponent, resolve: { GoalListResolver } }
     ]),
 
     StoreModule.forFeature(
@@ -24,7 +25,7 @@ import { GoalListItemComponent } from './goal-list-item/goal-list-item.component
 
     EffectsModule.forFeature([GoalListEffects])
   ],
-  providers: [GoalListFacade],
+  providers: [GoalListFacade, GoalListResolver, GoalListEffects],
   declarations: [GoalListComponent, GoalListItemComponent],
   exports: [GoalListComponent]
 })
