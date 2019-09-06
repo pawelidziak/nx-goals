@@ -7,6 +7,7 @@ import * as fromGoalList from './+state/goal-list.reducer';
 import { GoalListEffects } from './+state/goal-list.effects';
 import { GoalListFacade } from './+state/goal-list.facade';
 import { GoalListComponent } from './goal-list/goal-list.component';
+import { GoalListItemComponent } from './goal-list-item/goal-list-item.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { GoalListComponent } from './goal-list/goal-list.component';
     EffectsModule.forFeature([GoalListEffects])
   ],
   providers: [GoalListFacade],
-  declarations: [GoalListComponent],
+  declarations: [GoalListComponent, GoalListItemComponent],
   exports: [GoalListComponent]
 })
 export class GoalListModule {}
