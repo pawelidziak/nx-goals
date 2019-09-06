@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromGoal from './+state/goal.reducer';
 import { GoalEffects } from './+state/goal.effects';
 import { GoalFacade } from './+state/goal.facade';
+import { GoalComponent } from './goal/goal.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,8 @@ import { GoalFacade } from './+state/goal.facade';
 
     EffectsModule.forFeature([GoalEffects])
   ],
-  providers: [GoalFacade]
+  providers: [GoalFacade],
+  declarations: [GoalComponent],
+  exports: [GoalComponent]
 })
 export class GoalModule {}
