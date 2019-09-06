@@ -6,13 +6,14 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromGoalList from './+state/goal-list.reducer';
 import { GoalListEffects } from './+state/goal-list.effects';
 import { GoalListFacade } from './+state/goal-list.facade';
+import { GoalListComponent } from './goal-list/goal-list.component';
 
 @NgModule({
   imports: [
     CommonModule,
 
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      { path: '', pathMatch: 'full', component: GoalListComponent }
     ]),
 
     StoreModule.forFeature(
@@ -22,6 +23,8 @@ import { GoalListFacade } from './+state/goal-list.facade';
 
     EffectsModule.forFeature([GoalListEffects])
   ],
-  providers: [GoalListFacade]
+  providers: [GoalListFacade],
+  declarations: [GoalListComponent],
+  exports: [GoalListComponent]
 })
 export class GoalListModule {}

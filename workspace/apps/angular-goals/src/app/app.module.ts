@@ -17,7 +17,9 @@ import { FooterComponent } from './layout/footer/footer.component';
   imports: [
     BrowserModule,
     NxModule.forRoot(),
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([
+      { path: '', loadChildren: () => import('@workspace/goal-list').then(m => m.GoalListModule) },
+    ]),
     StoreModule.forRoot({}, { metaReducers: !environment.production ? [storeFreeze] : [] }),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
