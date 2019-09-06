@@ -19,6 +19,9 @@
     },
     "goal-list": {
       "tags": ["goal-list"]
+    },
+    "api": {
+      "tags": []
     }
   }
 }

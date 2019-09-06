@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@workspace/goal": ["libs/goal/src/index.ts"],
-      "@workspace/goal-list": ["libs/goal-list/src/index.ts"]
+      "@workspace/goal-list": ["libs/goal-list/src/index.ts"],
+      "@workspace/api": ["libs/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
