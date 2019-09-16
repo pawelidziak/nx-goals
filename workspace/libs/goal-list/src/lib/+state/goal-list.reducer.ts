@@ -8,7 +8,7 @@ export const GOALLIST_FEATURE_KEY = 'goalList';
 
 export interface GoalListState extends EntityState<GoalListEntity> {
   selectedId?: string | number; // which GoalList record has been selected
-  loaded: boolean; // has the GoalList list been loaded
+  loaded: boolean; // has the GoalList been loaded
   error?: string | null; // last none error (if any)
 }
 
@@ -22,6 +22,7 @@ export const goalListAdapter: EntityAdapter<
 
 export const initialState: GoalListState = goalListAdapter.getInitialState({
   // set initial required properties
+  selectedId: null,
   loaded: false
 });
 
