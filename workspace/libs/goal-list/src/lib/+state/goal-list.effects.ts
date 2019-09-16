@@ -4,6 +4,8 @@ import { DataPersistence } from '@nrwl/angular';
 
 import { GoalListPartialState } from './goal-list.reducer';
 import * as GoalListActions from './goal-list.actions';
+import { GoalListService } from '../goal-list.service';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class GoalListEffects {
@@ -13,8 +15,13 @@ export class GoalListEffects {
         action: ReturnType<typeof GoalListActions.loadGoalList>,
         state: GoalListPartialState
       ) => {
-        // Your custom service 'load' logic goes here. For now just return a success action...
-        return GoalListActions.loadGoalListSuccess({ goalList: [] });
+        return this.service
+          .query()
+          .pipe(
+            map(result =>
+              GoalListActions.loadGoalListSuccess({ goalList: result })
+            )
+          );
       },
 
       onError: (
@@ -29,6 +36,7 @@ export class GoalListEffects {
 
   constructor(
     private actions$: Actions,
-    private dataPersistence: DataPersistence<GoalListPartialState>
+    private dataPersistence: DataPersistence<GoalListPartialState>,
+    private service: GoalListService
   ) {}
 }
