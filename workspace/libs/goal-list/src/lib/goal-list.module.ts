@@ -10,6 +10,7 @@ import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalListItemComponent } from './goal-list-item/goal-list-item.component';
 import { GoalListResolver } from './goal-list-resolver';
 import { GoalListService } from './goal-list.service';
+import { UiModule } from '@workspace/ui';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { GoalListService } from './goal-list.service';
       fromGoalList.reducer
     ),
 
-    EffectsModule.forFeature([GoalListEffects])
+    EffectsModule.forFeature([GoalListEffects]),
+    UiModule
   ],
   providers: [
     GoalListFacade,
