@@ -18,6 +18,5 @@ export class GoalListComponent implements OnInit {
   ngOnInit() {
     this.loaded$ = this.facade.loaded$;
     this.goals$ = this.facade.allGoalList$;
-    this.facade.loaded$.subscribe(res => console.log(res));
   }
 }
