@@ -10,13 +10,14 @@ import { GoalListEntity } from '../+state/goal-list.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GoalListComponent implements OnInit {
-  isLoading$: Observable<boolean>;
+  loaded$: Observable<boolean>;
   goals$: Observable<GoalListEntity[]>;
- 
+
   constructor(private facade: GoalListFacade) {}
 
   ngOnInit() {
-    // this.isLoading$ = this.facade.isLoading$;
+    this.loaded$ = this.facade.loaded$;
     this.goals$ = this.facade.allGoalList$;
+    this.facade.loaded$.subscribe(res => console.log(res));
   }
 }
