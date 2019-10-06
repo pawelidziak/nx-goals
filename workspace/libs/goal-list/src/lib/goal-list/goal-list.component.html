@@ -1,9 +1,19 @@
-<div [hidden]="(loaded$ | async)">
-	Loading articles...
+<ui-header>
+  <h2>Goals</h2>
+</ui-header>
+
+<div [hidden]="loaded$ | async">
+  Loading goals...
 </div>
 
 <div [hidden]="!(loaded$ | async) || (goals$ | async).length > 0">
-	No goals are here... yet.
+  No goals are here... yet.
 </div>
 
-<app-goal-list-item *ngFor="let goal of goals$ | async" [goal]="goal"></app-goal-list-item>
+<ui-list>
+  <ui-list-item *ngFor="let goal of (goals$ | async)">
+    <div uiIcon>{{ goal.id }}</div>
+    <h2 uiLine>{{ goal.title }}</h2>
+    <p uiLine>{{ goal.description }}</p>
+  </ui-list-item>
+</ui-list>
