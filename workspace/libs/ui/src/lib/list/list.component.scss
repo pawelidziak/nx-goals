@@ -1,0 +1,14 @@
+.ui-list__content {
+  border-radius: 30px;
+  border: 1px solid #e6e6e6;
+  background-color: #fcfcfc;
+  padding: 10px;
+}
+
+.ui-line {
+  margin: 0;
+  // all lines but the top line should have smaller text
+  &:nth-child(n + 2) {
+    font-size: 10px;
+  }
+}
