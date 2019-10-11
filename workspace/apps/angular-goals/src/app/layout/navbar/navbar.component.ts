@@ -7,10 +7,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
+  navLinks = [
+    { label: 'First', icon: 'add', path: '' },
+    { label: 'Second', icon: 'add', path: '' },
+    { label: 'Third', icon: 'add', path: '' }
+  ];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

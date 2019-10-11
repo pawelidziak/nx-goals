@@ -11,14 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { LayouyModule } from './layout/layout.module';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    LayouyModule,
     NxModule.forRoot(),
     RouterModule.forRoot([
       {

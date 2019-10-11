@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<section class="app-nav__content">
+  <nav mat-tab-nav-bar mat-stretch-tabs>
+    <a
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+      class="app-nav__link"
+    >
+      <i class="material-icons">{{ link.icon }}</i>
+      <span>{{ link.label }}</span>
+    </a>
+  </nav>
+</section>
