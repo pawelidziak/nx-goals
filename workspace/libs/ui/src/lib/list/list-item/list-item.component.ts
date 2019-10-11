@@ -8,7 +8,7 @@ import {
   ChangeDetectionStrategy,
   ViewEncapsulation
 } from '@angular/core';
-import { LineDirective, setLines } from '../core/line/line.directive';
+import { LineDirective, setLines } from '../../core/line/line.directive';
 
 @Component({
   selector: 'ui-list-item',

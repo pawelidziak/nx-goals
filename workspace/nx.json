@@ -14,9 +14,6 @@
     "angular-goals": {
       "tags": []
     },
-    "goal": {
-      "tags": ["goal"]
-    },
     "goal-list": {
       "tags": ["goal-list"]
     },
@@ -25,9 +22,6 @@
     },
     "ui": {
       "tags": ["ui"]
-    },
-    "app-nav": {
-      "tags": ["app-nav"]
     }
   }
 }
