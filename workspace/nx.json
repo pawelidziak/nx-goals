@@ -25,6 +25,9 @@
     },
     "ui": {
       "tags": ["ui"]
+    },
+    "app-nav": {
+      "tags": ["app-nav"]
     }
   }
 }

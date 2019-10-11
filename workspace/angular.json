@@ -237,6 +237,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "app-nav": {
+      "projectType": "library",
+      "root": "libs/app-nav",
+      "sourceRoot": "libs/app-nav/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/app-nav/tsconfig.lib.json",
+              "libs/app-nav/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/app-nav/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/app-nav/jest.config.js",
+            "tsConfig": "libs/app-nav/tsconfig.spec.json",
+            "setupFile": "libs/app-nav/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
