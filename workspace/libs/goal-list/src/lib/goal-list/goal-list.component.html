@@ -8,7 +8,16 @@
 
 <ui-list>
   <ui-list-item *ngFor="let goal of (goals$ | async)">
-    <div uiIcon>{{ goal.id }}</div>
+    <mat-icon
+      uiIcon
+      aria-hidden="false"
+      aria-label="'Goal description'"
+      [style.color]="goal.iconColor || 'grey'"
+    >
+      {{ goal.icon }}
+    </mat-icon>
+
+    <!-- <div >{{ goal.id }}</div> -->
     <h2 uiLine>{{ goal.title }}</h2>
     <p uiLine>{{ goal.description }}</p>
   </ui-list-item>

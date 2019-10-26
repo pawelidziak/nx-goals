@@ -10,6 +10,7 @@ import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalListResolver } from './goal-list-resolver';
 import { GoalListService } from './goal-list.service';
 import { UiModule } from '@workspace/ui';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { UiModule } from '@workspace/ui';
     ),
 
     EffectsModule.forFeature([GoalListEffects]),
-    UiModule
+    UiModule,
+    MatIconModule
   ],
   providers: [
     GoalListFacade,
