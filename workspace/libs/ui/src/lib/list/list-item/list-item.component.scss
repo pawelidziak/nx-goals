@@ -1,9 +1,15 @@
 .ui-list-item__content {
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 12px 0;
+}
+
+.ui-list-item__icon {
+  margin: 0 16px;
 }
 
 .ui-list-item__text {
-  padding-left: 24px;
+  width: 100%;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e6e6e6;
 }
