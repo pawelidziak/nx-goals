@@ -12,21 +12,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     LayoutModule,
     NxModule.forRoot(),
-    RouterModule.forRoot([
-      {
-        path: '',
-        loadChildren: () =>
-          import('@workspace/goal-list').then(m => m.GoalListModule)
-      }
-    ]),
     StoreModule.forRoot(
       {},
       { metaReducers: !environment.production ? [storeFreeze] : [] }
