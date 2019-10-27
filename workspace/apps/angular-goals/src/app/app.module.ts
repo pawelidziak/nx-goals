@@ -11,14 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { LayouyModule } from './layout/layout.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    LayouyModule,
+    LayoutModule,
     NxModule.forRoot(),
     RouterModule.forRoot([
       {
