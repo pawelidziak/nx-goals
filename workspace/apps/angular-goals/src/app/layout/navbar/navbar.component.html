@@ -3,17 +3,22 @@
     <ul class="navbar__list">
       <li class="list__item" *ngFor="let link of navLinks">
         <a
+          *ngIf="!link.center"
           class="item__button"
           mat-button
-          color="primary"
+          routerLinkActive
           [routerLink]="link.path"
-          [routerLinkActive]="['active-link']"
         >
           <div class="button__content">
-            <mat-icon>{{ link.icon }}</mat-icon>
+            <mat-icon class="item__icon">{{ link.icon }}</mat-icon>
             <span>{{ link.label }}</span>
           </div>
         </a>
+        <div *ngIf="link.center" class="item__center">
+          <a color="primary" mat-fab routerLinkActive [routerLink]="link.path">
+            <mat-icon>{{ link.icon }}</mat-icon>
+          </a>
+        </div>
       </li>
     </ul>
   </nav>
