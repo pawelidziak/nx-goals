@@ -11,6 +11,7 @@ import { GoalListResolver } from './goal-list-resolver';
 import { GoalListService } from './goal-list.service';
 import { UiModule } from '@workspace/ui';
 import { MatIconModule } from '@angular/material/icon';
+import { GoalAddComponent } from './goal-add/goal-add.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,10 @@ import { MatIconModule } from '@angular/material/icon';
         pathMatch: 'full',
         component: GoalListComponent,
         resolve: { GoalListResolver }
+      },
+      {
+        path: 'add',
+        component: GoalAddComponent
       }
     ]),
 
@@ -40,7 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
     GoalListEffects,
     GoalListService
   ],
-  declarations: [GoalListComponent],
-  exports: [GoalListComponent]
+  declarations: [GoalListComponent, GoalAddComponent],
+  exports: [GoalListComponent, GoalAddComponent]
 })
 export class GoalListModule {}

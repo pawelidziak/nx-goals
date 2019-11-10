@@ -9,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class NavbarComponent implements OnInit {
   navLinks = [
     { label: 'Goals', icon: 'trending_up', path: 'goals' },
-    { label: 'Add', icon: 'add', path: '', center: true },
+    { label: 'Add', icon: 'add', path: 'goals/add', center: true },
     { label: 'Settings', icon: 'settings', path: '' }
   ];
   constructor() {}
