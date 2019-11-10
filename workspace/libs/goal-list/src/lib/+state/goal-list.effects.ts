@@ -11,25 +11,40 @@ import { map } from 'rxjs/operators';
 export class GoalListEffects {
   loadGoalList$ = createEffect(() =>
     this.dataPersistence.fetch(GoalListActions.loadGoalList, {
-      run: (
-        action: ReturnType<typeof GoalListActions.loadGoalList>,
-        state: GoalListPartialState
-      ) => {
-        return this.service
+      run: () =>
+        this.service
           .query()
           .pipe(
             map(result =>
               GoalListActions.loadGoalListSuccess({ goalList: result })
             )
-          );
-      },
-
-      onError: (
-        action: ReturnType<typeof GoalListActions.loadGoalList>,
-        error
-      ) => {
+          ),
+      onError: error => {
         console.error('Error', error);
         return GoalListActions.loadGoalListFailure({ error });
+      }
+    })
+  );
+
+  // addGoal$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(GoalListActions.addGoal),
+  //     switchMap(action => this.service.addGoal1(action.goal)),
+  //     take(1),
+  //     map(goal => GoalListActions.addGoalSuccess({ goal })),
+  //     catchError(error => of(GoalListActions.addGoalFailure({ error })))
+  //   )
+  // );
+
+  addGoal$ = createEffect(() =>
+    this.dataPersistence.pessimisticUpdate(GoalListActions.addGoal, {
+      run: (action: ReturnType<typeof GoalListActions.addGoal>) =>
+        this.service
+          .addGoal(action.goal)
+          .pipe(map(res => GoalListActions.addGoalSuccess({ goal: res }))),
+      onError: error => {
+        console.error('Error', error);
+        return GoalListActions.addGoalFailure({ error });
       }
     })
   );
