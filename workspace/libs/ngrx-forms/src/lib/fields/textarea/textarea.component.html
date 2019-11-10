@@ -1,0 +1,14 @@
+<mat-form-field
+  appearance="outline"
+  [formGroup]="group"
+  [ngStyle]="getStyles()"
+>
+  <mat-label>{{ field?.name }}</mat-label>
+  <textarea
+    matInput
+    [attr.rows]="field?.attrs?.rows || 5"
+    [formControlName]="field?.name"
+    [placeholder]="field?.placeholder"
+  >
+  </textarea>
+</mat-form-field>

@@ -12,11 +12,12 @@ import { GoalListService } from './goal-list.service';
 import { UiModule } from '@workspace/ui';
 import { MatIconModule } from '@angular/material/icon';
 import { GoalAddComponent } from './goal-add/goal-add.component';
+import { NgrxFormsModule } from '@workspace/ngrx-forms';
 
 @NgModule({
   imports: [
     CommonModule,
-
+    NgrxFormsModule,
     RouterModule.forChild([
       {
         path: '',

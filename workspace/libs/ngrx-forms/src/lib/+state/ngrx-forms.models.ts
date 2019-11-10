@@ -18,9 +18,10 @@ export interface Field {
   placeholder?: string;
   validator?: ValidatorFn[];
   attrs?: any;
+  styles?: any;
 }
 
-export type FieldType = 'INPUT' | 'TEXTAREA';
+export type FieldType = 'INPUT' | 'TEXTAREA' | 'DATE' | 'SELECT';
 
 export interface Errors {
   [key: string]: string;

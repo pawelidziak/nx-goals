@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { NgrxFormsEntity, Errors } from './ngrx-forms.models';
+import { Errors, Field } from './ngrx-forms.models';
 
 export const setData = createAction(
   '[NgrxForms] SET_DATA',
@@ -13,7 +13,7 @@ export const updateData = createAction(
 
 export const setStructure = createAction(
   '[NgrxForms] SET_STRUCTURE',
-  props<{ ngrxForms: any }>()
+  props<{ structure: Field[] }>()
 );
 
 export const setErrors = createAction(

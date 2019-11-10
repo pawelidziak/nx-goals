@@ -6,13 +6,13 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class NgrxFormsEffects {
-  setData$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(NgrxFormsActions.setData),
-      ofType(NgrxFormsActions.updateData),
-      map(() => NgrxFormsActions.initializeErrors())
-    )
-  );
+  // setData$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(NgrxFormsActions.setData),
+  //     ofType(NgrxFormsActions.updateData),
+  //     map(() => NgrxFormsActions.initializeErrors())
+  //   )
+  // );
 
   constructor(
     private actions$: Actions

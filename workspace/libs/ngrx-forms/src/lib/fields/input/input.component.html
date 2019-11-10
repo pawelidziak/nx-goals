@@ -1,0 +1,13 @@
+<mat-form-field
+  appearance="outline"
+  [formGroup]="group"
+  [ngStyle]="getStyles()"
+>
+  <mat-label>{{ field?.name }}</mat-label>
+  <input
+    matInput
+    [formControlName]="field?.name"
+    [placeholder]="field?.placeholder"
+    [type]="field?.attrs?.type || 'text'"
+  />
+</mat-form-field>
