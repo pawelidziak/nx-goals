@@ -19,4 +19,8 @@ export class GoalListComponent implements OnInit {
     this.loaded$ = this.facade.loaded$;
     this.goals$ = this.facade.allGoalList$;
   }
+
+  addGoal() {
+    this.facade.addGoal();
+  }
 }
