@@ -1,1 +1,8 @@
-<p>goal-add works!</p>
+<div class="goal-add__content">
+  <workspace-dynamic-form
+    (updateForm)="updateForm($event)"
+    [data$]="data$"
+    [structure$]="structure$"
+  >
+  </workspace-dynamic-form>
+</div>

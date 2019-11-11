@@ -1,0 +1,15 @@
+<mat-form-field
+  appearance="outline"
+  [formGroup]="group"
+  [ngStyle]="getStyles()"
+>
+  <mat-label>{{ field.name }}</mat-label>
+  <mat-select>
+    <mat-option
+      *ngFor="let option of field?.attrs?.selectOptions"
+      [value]="option"
+    >
+      {{ option }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
