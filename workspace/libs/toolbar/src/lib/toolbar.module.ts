@@ -9,6 +9,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { RouteButtonDirective } from './core/route-button/route-button.directive';
+import { TitleDirective } from './core/title/title.directive';
+import { ActionButtonDirective } from './core/action-button/action-button.directive';
 
 const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
 @NgModule({
@@ -22,7 +25,7 @@ const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
     EffectsModule.forFeature([ToolbarEffects])
   ],
   providers: [ToolbarFacade],
-  declarations: [ToolbarComponent],
-  exports: [ToolbarComponent]
+  declarations: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective],
+  exports: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective]
 })
 export class ToolbarModule {}

@@ -1,3 +1,13 @@
-<mat-toolbar color="primary">
-  Goals
+<mat-toolbar color="primary" class="toolbar__content">
+  <div class="route-button">
+    <ng-content select="[toolbarRouteButton]"></ng-content>
+  </div>
+
+  <div class="title">
+    <ng-content select="[toolbarTitle]"></ng-content>
+  </div>
+  <div class="action-button">
+    <ng-content select="[toolbarActionButton]"></ng-content>
+  </div>
+
 </mat-toolbar>
