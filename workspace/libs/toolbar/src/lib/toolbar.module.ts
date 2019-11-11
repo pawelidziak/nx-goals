@@ -16,6 +16,7 @@ import { BackButtonComponent } from './buttons/back-button/back-button.component
 import { HomeButtonComponent } from './buttons/home-button/home-button.component';
 
 const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +28,21 @@ const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
     EffectsModule.forFeature([ToolbarEffects])
   ],
   providers: [ToolbarFacade],
-  declarations: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective, BackButtonComponent, HomeButtonComponent],
-  exports: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective, BackButtonComponent, HomeButtonComponent]
+  declarations: [
+    ToolbarComponent,
+    RouteButtonDirective,
+    TitleDirective,
+    ActionButtonDirective,
+    BackButtonComponent,
+    HomeButtonComponent
+  ],
+  exports: [
+    ToolbarComponent,
+    RouteButtonDirective,
+    TitleDirective,
+    ActionButtonDirective,
+    BackButtonComponent,
+    HomeButtonComponent
+  ]
 })
 export class ToolbarModule {}
