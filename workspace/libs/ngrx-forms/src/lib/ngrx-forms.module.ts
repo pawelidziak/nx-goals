@@ -10,19 +10,28 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicFieldDirective } from './dynamic-form/dynamic-field.directive';
 import { InputComponent } from './fields/input/input.component';
 import { TextareaComponent } from './fields/textarea/textarea.component';
+import { SelectComponent } from './fields/select/select.component';
+import { DatepickerComponent } from './fields/datepicker/datepicker.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SelectComponent } from './fields/select/select.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+const MaterialModules = [
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule 
+];
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    
+    ...MaterialModules,
+
     StoreModule.forFeature(
       fromNgrxForms.NGRXFORMS_FEATURE_KEY,
       fromNgrxForms.reducer
@@ -35,9 +44,15 @@ import { MatSelectModule } from '@angular/material/select';
     DynamicFieldDirective,
     InputComponent,
     TextareaComponent,
-    SelectComponent
+    SelectComponent,
+    DatepickerComponent
   ],
-  entryComponents: [InputComponent, TextareaComponent, SelectComponent],
+  entryComponents: [
+    InputComponent,
+    TextareaComponent,
+    SelectComponent,
+    DatepickerComponent
+  ],
   exports: [DynamicFormComponent]
 })
 export class NgrxFormsModule {}

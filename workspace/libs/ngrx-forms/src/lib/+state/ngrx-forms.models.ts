@@ -21,7 +21,7 @@ export interface Field {
   styles?: any;
 }
 
-export type FieldType = 'INPUT' | 'TEXTAREA' | 'DATE' | 'SELECT';
+export type FieldType = 'INPUT' | 'TEXTAREA' | 'DATEPICKER' | 'SELECT';
 
 export interface Errors {
   [key: string]: string;

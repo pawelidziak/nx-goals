@@ -13,11 +13,13 @@ import { InputComponent } from '../fields/input/input.component';
 import { TextareaComponent } from '../fields/textarea/textarea.component';
 import { Field } from '@workspace/ngrx-forms';
 import { SelectComponent } from '../fields/select/select.component';
+import { DatepickerComponent } from '../fields/datepicker/datepicker.component';
 
 const componentsMapper: { [key: string]: Type<any> } = {
   INPUT: InputComponent,
   TEXTAREA: TextareaComponent,
-  SELECT: SelectComponent
+  SELECT: SelectComponent,
+  DATEPICKER: DatepickerComponent
 };
 
 @Directive({
