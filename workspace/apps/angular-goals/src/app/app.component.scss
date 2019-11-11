@@ -1,0 +1,20 @@
+.main__content {
+    margin-right: auto;
+    margin-left: auto;
+    height: 100vh;
+  }
+  @media (min-width: 768px) {
+    .main__content {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .main__content {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .main__content {
+      width: 1170px;
+    }
+  }
