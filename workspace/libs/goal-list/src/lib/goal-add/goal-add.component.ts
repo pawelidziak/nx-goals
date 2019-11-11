@@ -25,6 +25,13 @@ const structure: Field[] = [
     }
   },
   {
+    type: 'DATEPICKER',
+    name: 'Deadline',
+    styles: {
+      width: '100%'
+    }
+  },
+  {
     type: 'TEXTAREA',
     name: 'Description',
     placeholder: 'Description',
