@@ -1,0 +1,14 @@
+<mat-toolbar class="toolbar__content" [color]="color" [style.height]="height">
+  <div class="content__left">
+    <div class="route-button">
+      <ng-content select="[toolbarRouteButton]"></ng-content>
+    </div>
+
+    <div class="title">
+      <ng-content select="[toolbarTitle]"></ng-content>
+    </div>
+  </div>
+  <div class="action-button">
+    <ng-content select="[toolbarActionButton]"></ng-content>
+  </div>
+</mat-toolbar>

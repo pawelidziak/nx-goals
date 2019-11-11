@@ -25,6 +25,9 @@
     },
     "ngrx-forms": {
       "tags": []
+    },
+    "toolbar": {
+      "tags": []
     }
   }
 }

@@ -20,7 +20,8 @@
       "@workspace/goal-list": ["libs/goal-list/src/index.ts"],
       "@workspace/api": ["libs/api/src/index.ts"],
       "@workspace/ui": ["libs/ui/src/index.ts"],
-      "@workspace/ngrx-forms": ["libs/ngrx-forms/src/index.ts"]
+      "@workspace/ngrx-forms": ["libs/ngrx-forms/src/index.ts"],
+      "@workspace/toolbar": ["libs/toolbar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
