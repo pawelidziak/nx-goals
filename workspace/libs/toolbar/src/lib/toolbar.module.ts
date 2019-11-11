@@ -13,6 +13,7 @@ import { RouteButtonDirective } from './core/route-button/route-button.directive
 import { TitleDirective } from './core/title/title.directive';
 import { ActionButtonDirective } from './core/action-button/action-button.directive';
 import { BackButtonComponent } from './buttons/back-button/back-button.component';
+import { HomeButtonComponent } from './buttons/home-button/home-button.component';
 
 const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
 @NgModule({
@@ -26,7 +27,7 @@ const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
     EffectsModule.forFeature([ToolbarEffects])
   ],
   providers: [ToolbarFacade],
-  declarations: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective, BackButtonComponent],
-  exports: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective, BackButtonComponent]
+  declarations: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective, BackButtonComponent, HomeButtonComponent],
+  exports: [ToolbarComponent, RouteButtonDirective, TitleDirective, ActionButtonDirective, BackButtonComponent, HomeButtonComponent]
 })
 export class ToolbarModule {}
