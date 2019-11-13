@@ -1,34 +1,53 @@
 import { Injectable } from '@angular/core';
-import { createEffect, Actions } from '@ngrx/effects';
+import { Location } from '@angular/common';
+import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/angular';
+import { map, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
-import { ToolbarPartialState } from './toolbar.reducer';
 import * as ToolbarActions from './toolbar.actions';
 
 @Injectable()
 export class ToolbarEffects {
-  loadToolbar$ = createEffect(() =>
-    this.dataPersistence.fetch(ToolbarActions.loadToolbar, {
-      run: (
-        action: ReturnType<typeof ToolbarActions.loadToolbar>,
-        state: ToolbarPartialState
-      ) => {
-        // Your custom service 'load' logic goes here. For now just return a success action...
-        return ToolbarActions.loadToolbarSuccess({ toolbar: [] });
-      },
-
-      onError: (
-        action: ReturnType<typeof ToolbarActions.loadToolbar>,
-        error
-      ) => {
-        console.error('Error', error);
-        return ToolbarActions.loadToolbarFailure({ error });
-      }
-    })
+  navigate$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(ToolbarActions.toolbarGo),
+        map(action => action.route),
+        tap(({ path, query: queryParams, extras }) =>
+          this.router.navigate(path, { queryParams, ...extras })
+        )
+      ),
+    { dispatch: false }
   );
+
+  navigateBack$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(ToolbarActions.toolbarBack),
+        tap(() => this.location.back())
+      ),
+    { dispatch: false }
+  );
+
+  navigateForward$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(ToolbarActions.toolbarForward),
+        tap(() => this.location.forward())
+      ),
+    { dispatch: false }
+  );
+
+  navigateHome$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(ToolbarActions.toolbarHome),
+        tap(() => this.router.navigateByUrl(''))
+      ),
+    { dispatch: false }
+  );
+
 
   constructor(
     private actions$: Actions,
-    private dataPersistence: DataPersistence<ToolbarPartialState>
+    private router: Router,
+    private location: Location
   ) {}
 }

@@ -27,18 +27,18 @@ export const initialState: ToolbarState = toolbarAdapter.getInitialState({
 
 const toolbarReducer = createReducer(
   initialState,
-  on(ToolbarActions.loadToolbar, state => ({
-    ...state,
-    loaded: false,
-    error: null
-  })),
-  on(ToolbarActions.loadToolbarSuccess, (state, { toolbar }) =>
-    toolbarAdapter.addAll(toolbar, { ...state, loaded: true })
-  ),
-  on(ToolbarActions.loadToolbarFailure, (state, { error }) => ({
-    ...state,
-    error
-  }))
+  // on(ToolbarActions.loadToolbar, state => ({
+  //   ...state,
+  //   loaded: false,
+  //   error: null
+  // })),
+  // on(ToolbarActions.loadToolbarSuccess, (state, { toolbar }) =>
+  //   toolbarAdapter.addAll(toolbar, { ...state, loaded: true })
+  // ),
+  // on(ToolbarActions.loadToolbarFailure, (state, { error }) => ({
+  //   ...state,
+  //   error
+  // }))
 );
 
 export function reducer(state: ToolbarState | undefined, action: Action) {
