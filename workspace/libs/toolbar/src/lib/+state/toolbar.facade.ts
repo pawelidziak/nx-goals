@@ -14,7 +14,7 @@ export class ToolbarFacade {
 
   constructor(private store: Store<fromToolbar.ToolbarPartialState>) {}
 
-  loadAll() {
-    this.store.dispatch(ToolbarActions.loadToolbar());
+  goBack() {
+    this.store.dispatch(ToolbarActions.toolbarBack());
   }
 }
