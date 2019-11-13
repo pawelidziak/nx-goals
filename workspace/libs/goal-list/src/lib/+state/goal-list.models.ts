@@ -1,10 +1,20 @@
 /**
+ * Enum for the 'Priority' data
+ */
+export enum Priority {
+  A = 'A',
+  B = 'B',
+  C = 'C',
+  D = 'D'
+}
+
+/**
  * Interface for the 'GoalList' data
  */
 export interface GoalListEntity {
   id: string;
-  icon: string;
-  iconColor: string;
   title: string;
-  description: string;
+  description?: string;
+  deadline?: Date;
+  priority: Priority; 
 }

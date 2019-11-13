@@ -16,9 +16,7 @@ export interface GoalListPartialState {
   readonly [GOALLIST_FEATURE_KEY]: GoalListState;
 }
 
-export const goalListAdapter: EntityAdapter<
-  GoalListEntity
-> = createEntityAdapter<GoalListEntity>();
+export const goalListAdapter: EntityAdapter<GoalListEntity> = createEntityAdapter<GoalListEntity>();
 
 export const initialState: GoalListState = goalListAdapter.getInitialState({
   // set initial required properties
@@ -37,6 +35,19 @@ const goalListReducer = createReducer(
     goalListAdapter.addAll(goalList, { ...state, loaded: true })
   ),
   on(GoalListActions.loadGoalListFailure, (state, { error }) => ({
+    ...state,
+    error
+  })),
+  on(GoalListActions.addGoal, state => ({
+    ...state,
+    loaded: false,
+    error: null
+  })),
+  on(GoalListActions.addGoalSuccess, (state, { goal }) => {
+    console.log(state);
+    return goalListAdapter.addOne(goal, { ...state, loaded: true });
+  }),
+  on(GoalListActions.addGoalFailure, (state, { error }) => ({
     ...state,
     error
   }))
