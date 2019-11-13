@@ -1,3 +1,11 @@
+<workspace-toolbar>
+  <workspace-back-button toolbarRouteButton></workspace-back-button>
+  <h2 toolbarTitle>Add goal</h2>
+  <button mat-flat-button toolbarActionButton color="accent" (click)="submit()">
+    Save
+  </button>
+</workspace-toolbar>
+
 <div class="goal-add__content">
   <workspace-dynamic-form
     (updateForm)="updateForm($event)"

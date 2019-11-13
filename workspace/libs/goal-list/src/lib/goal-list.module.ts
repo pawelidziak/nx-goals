@@ -6,18 +6,24 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromGoalList from './+state/goal-list.reducer';
 import { GoalListEffects } from './+state/goal-list.effects';
 import { GoalListFacade } from './+state/goal-list.facade';
-import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalListResolver } from './goal-list-resolver';
 import { GoalListService } from './goal-list.service';
-import { UiModule } from '@workspace/ui';
-import { MatIconModule } from '@angular/material/icon';
+import { GoalListComponent } from './goal-list/goal-list.component';
 import { GoalAddComponent } from './goal-add/goal-add.component';
 import { NgrxFormsModule } from '@workspace/ngrx-forms';
+import { ToolbarModule } from '@workspace/toolbar';
+import { UiModule } from '@workspace/ui';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
+const MaterialModules = [MatIconModule, MatButtonModule];
 
 @NgModule({
   imports: [
     CommonModule,
+    ...MaterialModules,
     NgrxFormsModule,
+    ToolbarModule,
     RouterModule.forChild([
       {
         path: '',
@@ -37,8 +43,7 @@ import { NgrxFormsModule } from '@workspace/ngrx-forms';
     ),
 
     EffectsModule.forFeature([GoalListEffects]),
-    UiModule,
-    MatIconModule
+    UiModule
   ],
   providers: [
     GoalListFacade,
