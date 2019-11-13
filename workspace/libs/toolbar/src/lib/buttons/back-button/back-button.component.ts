@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ToolbarFacade } from '../../+state/toolbar.facade';
 
 @Component({
   selector: 'workspace-back-button',
@@ -8,9 +9,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class BackButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private facade: ToolbarFacade) { }
 
   ngOnInit() {
+  }
+
+  goBack() {
+    this.facade.goBack();
   }
 
 }
