@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input
+} from '@angular/core';
 import { ToolbarFacade } from '../../+state/toolbar.facade';
 
 @Component({
@@ -8,14 +13,13 @@ import { ToolbarFacade } from '../../+state/toolbar.facade';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BackButtonComponent implements OnInit {
+  @Input() label: string;
 
-  constructor(private facade: ToolbarFacade) { }
+  constructor(private facade: ToolbarFacade) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   goBack() {
     this.facade.goBack();
   }
-
 }

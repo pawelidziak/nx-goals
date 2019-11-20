@@ -1,3 +1,10 @@
-<button mat-icon-button aria-label="Go back" (click)="goBack()">
+<button *ngIf="label" mat-button aria-label="Go back" (click)="goBack()">
+  <div class="button__wrapper">
+    <mat-icon>arrow_back</mat-icon>
+    <span>{{ label }}</span>
+  </div>
+</button>
+
+<button *ngIf="!label" mat-icon-button aria-label="Home">
   <mat-icon>arrow_back</mat-icon>
 </button>
