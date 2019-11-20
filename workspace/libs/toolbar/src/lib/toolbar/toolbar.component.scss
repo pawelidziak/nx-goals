@@ -1,11 +1,47 @@
 .toolbar__content {
-  padding: 0 3px 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f2f2f2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.content__left {
+.toolbar__list {
   display: flex;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list__item {
+  flex: 1;
+}
+
+.item__button {
+  width: 100%;
+  border-radius: 0;
+  padding: 6px 0;
+  font-size: 10px;
+  color: #616161;
+}
+
+.item__icon {
+  font-size: 16px;
+  height: 16px;
+}
+
+.button__content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  line-height: 1;
+}
+
+.item__center {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -40%);
 }
