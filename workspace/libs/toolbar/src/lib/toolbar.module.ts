@@ -14,12 +14,14 @@ import { TitleDirective } from './core/title/title.directive';
 import { ActionButtonDirective } from './core/action-button/action-button.directive';
 import { BackButtonComponent } from './buttons/back-button/back-button.component';
 import { HomeButtonComponent } from './buttons/home-button/home-button.component';
+import { RouterModule } from '@angular/router';
 
 const MaterialModules = [MatToolbarModule, MatButtonModule, MatIconModule];
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     ...MaterialModules,
     StoreModule.forFeature(
       fromToolbar.TOOLBAR_FEATURE_KEY,

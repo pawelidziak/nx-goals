@@ -2,31 +2,36 @@ import { createReducer, on, Action } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as ToolbarActions from './toolbar.actions';
-import { ToolbarEntity } from './toolbar.models';
+import { ToolbarEntity, NavLink } from './toolbar.models';
 
 export const TOOLBAR_FEATURE_KEY = 'toolbar';
 
-export interface ToolbarState extends EntityState<ToolbarEntity> {
-  selectedId?: string | number; // which Toolbar record has been selected
-  loaded: boolean; // has the Toolbar list been loaded
-  error?: string | null; // last none error (if any)
+export interface NgrxToolbar {
+  navLinks: NavLink[];
 }
 
-export interface ToolbarPartialState {
-  readonly [TOOLBAR_FEATURE_KEY]: ToolbarState;
+export interface ToolbarState {
+  readonly ngrxToolbar: NgrxToolbar;
 }
 
-export const toolbarAdapter: EntityAdapter<ToolbarEntity> = createEntityAdapter<
-  ToolbarEntity
->();
+// export interface ToolbarPartialState {
+//   readonly [TOOLBAR_FEATURE_KEY]: ToolbarState;
+// }
 
-export const initialState: ToolbarState = toolbarAdapter.getInitialState({
-  // set initial required properties
-  loaded: false
-});
+// export const toolbarAdapter: EntityAdapter<ToolbarEntity> = createEntityAdapter<
+//   ToolbarEntity
+// >();
+
+export const initialState: NgrxToolbar = {
+  navLinks: []
+};
 
 const toolbarReducer = createReducer(
   initialState,
+  on(ToolbarActions.toolbarSetLinks, (state, { links }) => {
+    const newLinks = links ? links.slice(0) : [];
+    return { ...state, navLinks: links };
+  }),
   // on(ToolbarActions.loadToolbar, state => ({
   //   ...state,
   //   loaded: false,
@@ -41,6 +46,6 @@ const toolbarReducer = createReducer(
   // }))
 );
 
-export function reducer(state: ToolbarState | undefined, action: Action) {
+export function reducer(state: NgrxToolbar | undefined, action: Action) {
   return toolbarReducer(state, action);
 }

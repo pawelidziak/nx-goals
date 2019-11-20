@@ -18,3 +18,10 @@ export interface RouterStateUrl {
   queryParams: Params;
   params: Params;
 }
+
+export interface NavLink {
+  label: string;
+  icon: string;
+  center?: boolean;
+  route?: RouteAttrs;
+}
