@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgrxFormsFacade, Field } from '@workspace/ngrx-forms';
 import { Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { ToolbarFacade, NavLink } from '@workspace/toolbar';
 
 const structure: Field[] = [
   {
@@ -39,7 +40,13 @@ const structure: Field[] = [
     styles: {
       width: '100%'
     }
-  },
+  }
+];
+
+const navLinks: NavLink[] = [
+  { label: 'Goals', icon: 'trending_up', route: { path: ['goals'] } },
+  { label: 'Add', icon: 'add', center: true, route: { path: ['goals/add'] } },
+  { label: 'Settings', icon: 'settings' }
 ];
 
 @Component({
@@ -52,10 +59,14 @@ export class GoalAddComponent implements OnInit {
   structure$: Observable<Field[]>;
   data$: Observable<any>;
 
-  constructor(private ngrxFormsFacade: NgrxFormsFacade) {}
+  constructor(
+    private ngrxFormsFacade: NgrxFormsFacade,
+    private toolbarFacade: ToolbarFacade
+  ) {}
 
   ngOnInit() {
     this.ngrxFormsFacade.setStructure(structure);
+    this.toolbarFacade.setLinks(navLinks);
     this.data$ = this.ngrxFormsFacade.data$;
     this.structure$ = this.ngrxFormsFacade.structure$;
   }
@@ -65,7 +76,7 @@ export class GoalAddComponent implements OnInit {
   }
 
   submit() {
-    
+    console.log('TODO submit');
   }
 
   ngOnDestroy() {
