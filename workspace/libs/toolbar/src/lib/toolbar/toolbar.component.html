@@ -1,22 +1,5 @@
-<section class="toolbar__content">
-  <nav>
-    <ul class="toolbar__list">
-      <li
-        class="list__item"
-        *ngFor="let link of (navLinks$ | async)"
-      >
-        <a *ngIf="!link.center" class="item__button" mat-button>
-          <div class="button__content">
-            <mat-icon class="item__icon">{{ link.icon }}</mat-icon>
-            <span>{{ link.label }}</span>
-          </div>
-        </a>
-        <div *ngIf="link.center" class="item__center">
-          <a color="primary" mat-fab>
-            <mat-icon>{{ link.icon }}</mat-icon>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-</section>
+<nav class="toolbar__content">
+  <ul class="toolbar__list">
+    <ng-content></ng-content>
+  </ul>
+</nav>
