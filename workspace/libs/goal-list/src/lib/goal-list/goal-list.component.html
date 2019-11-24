@@ -1,3 +1,30 @@
+<workspace-toolbar>
+  <workspace-toolbar-button
+    toolbarActionButton
+    matIcon="trending_up"
+    label="Progress"
+    minWidth="30"
+  >
+  </workspace-toolbar-button>
+  <a
+    toolbarButtonPosition
+    left="50"
+    top="0"
+    mat-fab
+    color="primary"
+    [routerLink]="['/goals/add']"
+  >
+    <mat-icon>add</mat-icon>
+  </a>
+  <workspace-toolbar-button
+    toolbarActionButton
+    matIcon="settings"
+    label="Settings"
+    minWidth="30"
+  >
+  </workspace-toolbar-button>
+</workspace-toolbar>
+
 <div [hidden]="loaded$ | async">
   Loading goals...
 </div>

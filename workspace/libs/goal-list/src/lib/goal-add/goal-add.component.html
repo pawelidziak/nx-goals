@@ -1,9 +1,23 @@
 <workspace-toolbar>
-  <workspace-back-button toolbarRouteButton></workspace-back-button>
-  <h2 toolbarTitle>Add goal</h2>
-  <button mat-flat-button toolbarActionButton color="accent" (click)="submit()">
-    Save
-  </button>
+  <workspace-back-button
+    toolbarActionButton
+    label="Back"
+  ></workspace-back-button>
+
+  <div style="display: flex;">
+    <a toolbarActionButton mat-button aria-label="Save" (click)="save()">
+      Save
+    </a>
+
+    <a
+      toolbarActionButton
+      mat-button
+      aria-label="Save & add"
+      (click)="saveAndAdd()"
+    >
+      Save & add
+    </a>
+  </div>
 </workspace-toolbar>
 
 <div class="goal-add__content">
