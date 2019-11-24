@@ -12,8 +12,8 @@ export class BaseToolbarButton {
 
   constructor(private _location: Location, private _router: Router) {}
 
-  routerGoHome(path?: string) {
-    this._router.navigateByUrl(path ? path : '/');
+  routerGoHome() {
+    this._router.navigateByUrl(this.path ? this.path : '/');
   }
 
   locationGoBack() {
