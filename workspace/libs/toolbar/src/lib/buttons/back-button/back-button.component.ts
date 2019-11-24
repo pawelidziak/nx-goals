@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { BaseToolbarButton } from '../base-toolbar-button';
+import { ToolbarButtonComponent } from '../toolbar-button/toolbar-button.component';
 
 @Component({
   selector: 'workspace-back-button',
@@ -7,8 +7,4 @@ import { BaseToolbarButton } from '../base-toolbar-button';
   styleUrls: ['./back-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BackButtonComponent extends BaseToolbarButton {
-  goBack() {
-    this.locationGoBack();
-  }
-}
+export class BackButtonComponent extends ToolbarButtonComponent {}

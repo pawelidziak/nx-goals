@@ -1,12 +1,5 @@
-<button
-  mat-button
-  aria-label="Go back"
-  (click)="goBack()"
-  class="item__button"
-  [style.min-width.px]="minWidth ? minWidth : 0"
->
-  <div class="button__wrapper">
-    <mat-icon>arrow_back</mat-icon>
-    <span>{{ label }}</span>
-  </div>
-</button>
+<workspace-toolbar-button
+  matIcon="arrow_back"
+  [label]="label"
+  path="LOCATION_BACK"
+></workspace-toolbar-button>
