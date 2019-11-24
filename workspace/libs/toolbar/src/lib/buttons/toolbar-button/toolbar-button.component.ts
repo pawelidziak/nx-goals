@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
   selector: 'workspace-toolbar-button',
   templateUrl: './toolbar-button.component.html',
   styleUrls: ['./toolbar-button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ToolbarButtonComponent {
   @Input() matIcon: string;
