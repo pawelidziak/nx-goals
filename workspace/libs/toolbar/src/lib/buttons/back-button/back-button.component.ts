@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseToolbarButton } from '../base-toolbar-button';
 
 @Component({
@@ -7,9 +7,7 @@ import { BaseToolbarButton } from '../base-toolbar-button';
   styleUrls: ['./back-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BackButtonComponent extends BaseToolbarButton implements OnInit {
-  ngOnInit() {}
-
+export class BackButtonComponent extends BaseToolbarButton {
   goBack() {
     this.locationGoBack();
   }

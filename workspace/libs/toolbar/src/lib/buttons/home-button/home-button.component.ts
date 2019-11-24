@@ -1,9 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { BaseToolbarButton } from '../base-toolbar-button';
 
 @Component({
   selector: 'workspace-home-button',
@@ -11,10 +7,8 @@ import {
   styleUrls: ['./home-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeButtonComponent implements OnInit {
-  @Input() label: string;
-
-  constructor() {}
-
-  ngOnInit() {}
+export class HomeButtonComponent extends BaseToolbarButton {
+  navigate() {
+    this.routerGoHome();
+  }
 }
