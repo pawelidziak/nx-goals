@@ -7,6 +7,8 @@ import { ToolbarEffects } from './+state/toolbar.effects';
 import { ToolbarFacade } from './+state/toolbar.facade';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ActionButtonDirective } from './core/action-button/action-button.directive';
+import { ButtonPositionDirective } from './core/button-position/button-position.directive';
+import { ToolbarButtonComponent } from './buttons/toolbar-button/toolbar-button.component';
 import { BackButtonComponent } from './buttons/back-button/back-button.component';
 import { HomeButtonComponent } from './buttons/home-button/home-button.component';
 import { RouterModule } from '@angular/router';
@@ -30,12 +32,16 @@ const MaterialModules = [MatButtonModule, MatIconModule];
   declarations: [
     ToolbarComponent,
     ActionButtonDirective,
+    ButtonPositionDirective,
+    ToolbarButtonComponent,
     BackButtonComponent,
     HomeButtonComponent
   ],
   exports: [
     ToolbarComponent,
     ActionButtonDirective,
+    ButtonPositionDirective,
+    ToolbarButtonComponent,
     BackButtonComponent,
     HomeButtonComponent
   ]
