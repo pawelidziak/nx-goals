@@ -1,21 +1,15 @@
-import { Directive, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, AfterViewInit, Renderer2, Input } from '@angular/core';
 
 @Directive({
   selector: '[toolbarActionButton]'
 })
 export class ActionButtonDirective implements AfterViewInit {
+  @Input() minWidth: number;
+
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngAfterViewInit() {
-    this.addCssClass();
     this.sorroundByElement('li');
-  }
-
-  addCssClass() {
-    const tagName = this.el.nativeElement.tagName.toLowerCase();
-    if (tagName === 'button' || tagName === 'a') {
-      this.el.nativeElement.classList.add('item__button');
-    }
   }
   
   sorroundByElement(sourroundBy: string) {
@@ -24,6 +18,7 @@ export class ActionButtonDirective implements AfterViewInit {
 
     // Create a sourroundBy element
     const liElement = this.renderer.createElement(sourroundBy);
+    this.renderer.setStyle(liElement, 'min-width', `${this.minWidth ? this.minWidth : 0}%` )
 
     // Add the div, just before the input
     this.renderer.insertBefore(parent, liElement, this.el.nativeElement);
