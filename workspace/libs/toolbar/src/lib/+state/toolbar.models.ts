@@ -6,9 +6,3 @@ import { NavigationExtras, Params } from '@angular/router';
 export interface ToolbarEntity {
   id: string | number; // Primary ID
 }
-
-export interface NavLink {
-  label: string;
-  icon: string;
-  center?: boolean;
-}
