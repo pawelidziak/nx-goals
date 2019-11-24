@@ -44,8 +44,8 @@ const structure: Field[] = [
 ];
 
 const navLinks: NavLink[] = [
-  { label: 'Goals', icon: 'trending_up', route: { path: ['goals'] } },
-  { label: 'Add', icon: 'add', center: true, route: { path: ['goals/add'] } },
+  { label: 'Goals', icon: 'trending_up' },
+  { label: 'Add', icon: 'add', center: true },
   { label: 'Settings', icon: 'settings' }
 ];
 

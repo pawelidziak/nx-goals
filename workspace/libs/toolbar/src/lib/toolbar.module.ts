@@ -6,8 +6,6 @@ import * as fromToolbar from './+state/toolbar.reducer';
 import { ToolbarEffects } from './+state/toolbar.effects';
 import { ToolbarFacade } from './+state/toolbar.facade';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { RouteButtonDirective } from './core/route-button/route-button.directive';
-import { TitleDirective } from './core/title/title.directive';
 import { ActionButtonDirective } from './core/action-button/action-button.directive';
 import { BackButtonComponent } from './buttons/back-button/back-button.component';
 import { HomeButtonComponent } from './buttons/home-button/home-button.component';
@@ -31,16 +29,12 @@ const MaterialModules = [MatButtonModule, MatIconModule];
   providers: [ToolbarFacade],
   declarations: [
     ToolbarComponent,
-    RouteButtonDirective,
-    TitleDirective,
     ActionButtonDirective,
     BackButtonComponent,
     HomeButtonComponent
   ],
   exports: [
     ToolbarComponent,
-    RouteButtonDirective,
-    TitleDirective,
     ActionButtonDirective,
     BackButtonComponent,
     HomeButtonComponent
