@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Input
 } from '@angular/core';
-import { NavLink, RouteAttrs } from '../+state/toolbar.models';
+import { NavLink } from '../+state/toolbar.models';
 import { ToolbarFacade } from '../+state/toolbar.facade';
 import { Observable } from 'rxjs';
 
@@ -25,12 +25,5 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit() {
     this.navLinks$ = this.facade.getNavLinks$;
-  }
-
-  navigate(route: RouteAttrs) {
-    if (!route) {
-      return;
-    }
-    this.facade.go(route);
   }
 }

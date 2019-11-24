@@ -4,7 +4,6 @@
       <li
         class="list__item"
         *ngFor="let link of (navLinks$ | async)"
-        (click)="navigate(link.route)"
       >
         <a *ngIf="!link.center" class="item__button" mat-button>
           <div class="button__content">
