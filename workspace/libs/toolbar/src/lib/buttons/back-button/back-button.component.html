@@ -1,10 +1,12 @@
-<button *ngIf="label" mat-button aria-label="Go back" (click)="goBack()">
+<button
+  mat-button
+  aria-label="Go back"
+  (click)="goBack()"
+  class="item__button"
+  [style.min-width.px]="minWidth ? minWidth : 0"
+>
   <div class="button__wrapper">
     <mat-icon>arrow_back</mat-icon>
     <span>{{ label }}</span>
   </div>
-</button>
-
-<button *ngIf="!label" mat-icon-button aria-label="Home">
-  <mat-icon>arrow_back</mat-icon>
 </button>
